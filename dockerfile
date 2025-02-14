@@ -1,12 +1,11 @@
 # Use the official Golang image as the base image
-FROM golang:1.21-alpine AS builder
+FROM golang:1.23-alpine AS builder
 
 # Set the working directory
 WORKDIR /app
 
 # Copy the Go module files
 COPY go.mod .
-COPY go.sum .
 
 # Download dependencies
 RUN go mod download
